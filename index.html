@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <title>MANS DATORIKAS PORTFOLIO</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/w3.css">
+    <link rel="stylesheet" href="CSS/mansStils.css">
+    <script>
+        function raditNodalu(id) {
+    // 1. Paslēpjam visas nodaļas
+    var visasNodalas = document.getElementsByClassName("nodala");
+    for (var i = 0; i < visasNodalas.length; i++) {
+        visasNodalas[i].style.display = "none";
+    }
+
+    // 2. Parādām izvēlēto nodaļu
+    var izveletaNodala = document.getElementById(id);
+    if (izveletaNodala) {
+        izveletaNodala.style.display = "block";
+        // Pārbīdām skatu uz šo nodaļu, lai lietotājs to uzreiz redz
+        //izveletaNodala.scrollIntoView();
+    }
+}
+
+// 3. Šī daļa nostrādā, kad lapa tiek ielādēta
+window.onload = function() {
+    // 1. Mēģinām iegūt ID no adreses joslas (piemēram, pēc # simbola)
+    var hash = window.location.hash.substring(1); 
+    
+    
+    if (hash) {
+        // Ja adresē ir ID (piemēram, index.html#video), atveram to
+        raditNodalu(hash);
+    } else {
+        // JA ADRESĒ NEKĀ NAV (pirmā ielāde), automātiski atveram 'teksts'
+        raditNodalu('sakums');
+    }
+};
+    </script>
+</head>
+<body>
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="raditNodalu('sakums')">Sākums</button>
+   <button class="w3-bar-item w3-button" onclick="raditNodalu('teksts')">Tekstapstrāde</button>
+  <button class="w3-bar-item w3-button" onclick="raditNodalu('grafika')">Grafika</button>
+  <button class="w3-bar-item w3-button" onclick="raditNodalu('3d')">3D & Video</button>
+  <a href="otrais.html" class="w3-bar-item w3-button">Individuālā tēma</a>
+</div>
+
+<div class="satura-konteiners">
+    <h1>Mans Datorikas Portfolio</h1>
+    <div id="sakums" class="nodala">
+        <h2>Sveicināti Manā Datorikas Portfolio</h2>
+        <p>Šajā mājaslapā ir apkopoti mani darbi, kurus esmu veidojis datorikas stundu ietvaros. Izmantojiet augšējo navigācijas izvēlni, lai apskatītu manu pieredzi darbā ar vektorgrafiku, rastrgrafiku, 3D modelēšanas un printēšanas procesu skolēnu uzņēmumam, kā arī Word un Excel.</p>
+        <img src=Images/Vardsxcf.png height="300px">
+    </div>
+
+    <div id="teksts" class="nodala">
+        <h2>Tekstapstrāde</h2>
+        <h3>Word dokumentu apstrāde</h3>
+        <img src="Images/Word.jpg" height="200px">
+        <p>Microsoft Word ir viena no populārākajām tekstapstrādes programmām, ko izmanto dokumentu, referātu un citu rakstu darbu noformēšanai. Datorikas stundās tika apgūta teksta formatēšana, stilu lietošana un dokumentu struktūras izveide.</p>
+        
+        <h3>Excel izklājlapu apstrāde</h3>
+        <img src="Images/Excel.png" height="150px">
+        <p>Microsoft Excel nodrošina jaudīgus rīkus datu analīzei, tabulu veidošanai un matemātisko aprēķinu veikšanai. Apguvām formulu, funkciju (piemēram, SUM, AVERAGE, IF) lietošanu un diagrammu ģenerēšanu datu vizualizācijai. Excel tabulas piemērs:</p>
+    </div>
+
+    <div id="grafika" class="nodala">
+        <h2>Datorgrafika</h2>
+        <h3>Rastra grafika - GIMP</h3>
+        <p>Manis veidots/apstrādāts attēls programmatūra GIMP</p>
+        <img src="Images/Saplestabilde.png" height="200px">
+        <h3>Vektorgrafika - Inkscape</h3>
+        <p> Manis veidotais logo programmātūra Inkscape</p>
+        <img src="images/InkIMG.PNG" height="200px">
+    </div>
+
+    <div id="3d" class="nodala">
+        <h2 id="video">Mans Tinkercad projekts un video par to</h2>
+        <h3>Tinkercad</h3>
+        <p>Tinkercad ir viegli lietojama tiešsaistes programma 3D modelēšanai un dizainam. Sava projekta ietvaros es izmantoju Tinkercad, lai izveidotu 3D modeli, kurš redzams augstāk, un pēc tam to prezentēju savā video darbā. Tā ir lieliska platforma, lai apgūtu 3D modelēšanas pamatus un īstenotu savas radošās idejas.</p>
+        <p>Manis veidotais 3d kubiņš:</p>
+        <img src="Images/Tinkercad.png" alt="3D kubs" height="200px">
+        <h3>Video klips par ši projekta realizēšanu:</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EfxvWmoNjc0?si=0uwbIEOxNMNrAROa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>Šis video ir veidots programmā "CapCut" CapCut ir populāra un daudzpusīga video rediģēšanas programma, kas ļauj viegli izveidot un apstrādāt video. Šajā lapā redzamais video tika montēts, izmantojot CapCut sniegtās iespējas — dažādus efektus, pārejas un rīkus, kas palīdz izveidot dinamisku un saistošu saturu<p/>
+    </div>
+
+    <hr>
+    <p>Piemērs izklājlapu aprēķiniem: <a href="ExcelPiemērs.xlsx" download>Lejupielādēt aprēķini.xlsx</a></p>
+    
+    <footer class="w3-container w3-light-grey">
+        <p>Papildus darbi: 
+            <a href="forma_1.html">Formas</a>|
+            <a href="dzerdaudz.html">Dzērienu izvēlne</a> | 
+            <a href="dzer.html">Cenu kalkulators</a> 
+        </p>
+    </footer>
+</div>
+
+</body>
+</html>
