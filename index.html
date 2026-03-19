@@ -7,32 +7,31 @@
     <link rel="stylesheet" href="CSS/mansStils.css">
     <script>
         function raditNodalu(id) {
-    // 1. Paslēpjam visas nodaļas
+   
     var visasNodalas = document.getElementsByClassName("nodala");
     for (var i = 0; i < visasNodalas.length; i++) {
         visasNodalas[i].style.display = "none";
     }
 
-    // 2. Parādām izvēlēto nodaļu
+  
     var izveletaNodala = document.getElementById(id);
     if (izveletaNodala) {
         izveletaNodala.style.display = "block";
-        // Pārbīdām skatu uz šo nodaļu, lai lietotājs to uzreiz redz
-        //izveletaNodala.scrollIntoView();
+        
     }
 }
 
-// 3. Šī daļa nostrādā, kad lapa tiek ielādēta
+
 window.onload = function() {
-    // 1. Mēģinām iegūt ID no adreses joslas (piemēram, pēc # simbola)
+   
     var hash = window.location.hash.substring(1); 
     
     
     if (hash) {
-        // Ja adresē ir ID (piemēram, index.html#video), atveram to
+       
         raditNodalu(hash);
     } else {
-        // JA ADRESĒ NEKĀ NAV (pirmā ielāde), automātiski atveram 'teksts'
+       
         raditNodalu('sakums');
     }
 };
@@ -71,7 +70,7 @@ window.onload = function() {
         <h2>Datorgrafika</h2>
         <h3>Rastra grafika - GIMP</h3>
         <p>Manis veidots/apstrādāts attēls programmatūra GIMP</p>
-        <img src="https://ibb.co/0R44KZc1" height="200px">
+        <img src="https://i.ibb.co/fz669t2Z/Saplesta-Bilde.png" height="200px">
         <h3>Vektorgrafika - Inkscape</h3>
         <p> Manis veidotais logo programmātūra Inkscape</p>
         <img src="images/InkIMG.PNG" height="200px">
