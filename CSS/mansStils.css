@@ -1,4 +1,3 @@
-/* CSS/mansStils.css */
 body {
   background-image: url("../Images/Fons.jpg");
   background-size: cover;
@@ -10,7 +9,7 @@ h3{
    color: #0b852d
 }
 
-/* Caurspīdīgs slānis virs fona, lai teksts būtu lasāms */
+
 .satura-konteiners {
   background-color: rgba(255, 255, 255, 0.9);
   margin: 20px;
@@ -19,7 +18,7 @@ h3{
 }
 
 .nodala {
-  display: none; /* Paslēpj nodaļas sākumā priekš JS funkcijas */
+  display: none; 
   padding: 20px 0;
 }
 
