@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>Baiti</title>
+</head>
+<body>
+
+        <form id="infoLauks">
+            <p>
+                Aprēķināt cik daudz informācijas var lejupielādēt 
+                <input type="number" id="sekundes" placeholder="ievadi sekundes" onfocus="reseto()"> 
+                sekundēs, ja interneta ātrums ir 25 Mbps.
+            </p>
+
+            <div class="atbilde-sekcija">
+                Atbilde<br><br>
+                <input type="text" id="rezultats" readonly>
+                <input type="radio" name="mervieniba" value="KiB" onclick="aprekinat(this.value)"> KiB
+                <input type="radio" name="mervieniba" value="KB" onclick="aprekinat(this.value)"> KB
+            </div>
+        </form>
+
+    <script>
+        const atrums = 25;
+
+        function aprekinat(tips) {
+            const s = document.getElementById('sekundes').value;
+            const atbilde = document.getElementById('rezultats');
+
+            if (s === "" || s < 0) {
+                atbilde.value = "Nepareizi ievadīts"
+                return;
+            }
+
+            
+            let kopējieBaiti = (s * atrums * 1000000) / 8;
+            let galaRezultats = 0;
+
+            if (tips === "KB") {
+                
+                galaRezultats = kopējieBaiti / 1000;
+            } else if (tips === "KiB") {
+               
+                galaRezultats = kopējieBaiti / 1024;
+            }
+
+            atbilde.value = parseFloat(galaRezultats.toFixed(4));
+        }
+
+        function reseto() {
+            document.getElementById('infoLauks').reset();
+        }
+    </script>
+    
+
+</body>
+</html>
